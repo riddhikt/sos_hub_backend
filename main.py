@@ -223,7 +223,7 @@ def analyze():
         llama_analysis = analyze_data(firellava_analysis, user_category, user_description)
 
     recommendations = analyze_recommendations(firellava_analysis, llama_analysis)
-
+    print(recommendations)
     data_to_store = [{
         "image_analysis": firellava_analysis,
         "llama_analysis": json.loads(llama_analysis) if llama_analysis else None,
