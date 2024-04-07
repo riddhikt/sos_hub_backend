@@ -5,6 +5,7 @@ import openai
 import base64
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
+from datetime import datetime
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
@@ -230,7 +231,8 @@ def analyze():
         "location": location,
         "image_base64": image_base64,
         "category": user_category,
-        "desc": user_description
+        "desc": user_description,
+        "datetime": str(datetime.now())
     }]
 
     # Call the function to store data in the Neurelo database
