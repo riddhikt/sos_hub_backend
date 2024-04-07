@@ -224,6 +224,10 @@ def analyze():
 
     recommendations = analyze_recommendations(firellava_analysis, llama_analysis)
     print(recommendations)
+    if type(recommendations) == 'dict':
+        json.loads(recommendations)
+    elif type(recommendations) == 'str':
+        recommendations = {'dos': recommendations}
     data_to_store = [{
         "image_analysis": firellava_analysis,
         "llama_analysis": json.loads(llama_analysis) if llama_analysis else None,
