@@ -239,5 +239,11 @@ def analyze():
     return jsonify(data_to_store)
 
 
+@app.route('/', methods=['POST'])
+@cross_origin(supports_credentials=True)
+def server_up():
+    return "server is up"
+
+
 if __name__ == '__main__':
     app.run(debug=True)
