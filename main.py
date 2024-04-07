@@ -245,5 +245,21 @@ def server_up():
     return "server is up"
 
 
+@app.route('/get_db', methods=['GET'])
+@cross_origin(supports_credentials=True)
+def get_db():
+    headers = {
+        "X-API-KEY": NEURELO_API_KEY,
+        "Content-Type": "application/json"
+    }
+    response = requests.get(NEURELO_API_URL, headers=headers)
+    # print(response)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print(
+            f"Failed to get data from database. Status code: {response.status_code}, Response: {response.text}")
+
+
 if __name__ == '__main__':
     app.run(debug=True)
