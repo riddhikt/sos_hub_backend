@@ -9,7 +9,7 @@ from datetime import datetime
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
-
+# API Keys have been disabled for security reasons. Please replace the values with your own API keys.
 FIREWORKS_API_KEY = "zLvHIvRZLnEmAGCGYbCzSYx9sqHidDmOkYLBDwvB7MbdWFCl"
 NEURELO_API_URL = "https://us-west-2.aws.neurelo.com/rest/user_requests"
 NEURELO_API_KEY = ("neurelo_9wKFBp874Z5xFw6ZCfvhXTGX5vYS/bbD99o3iuuYi5OaN1YNcm8X/wP6BK5rCoxsnuCzU"
